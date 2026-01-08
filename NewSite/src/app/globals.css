@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-[#0f172a];
+  }
+}
+
+@layer components {
+  /* * Custom Nav Link Utility 
+   * Hover effect: Text color change + Sliding bottom border
+   */
+  .nav-link {
+    @apply relative font-medium text-gov-navy transition-colors duration-300 pb-1;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 bottom-0 h-[2px] w-0 bg-gov-crimson transition-all duration-300 ease-in-out;
+  }
+
+  .nav-link:hover {
+    @apply text-gov-crimson;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* CTA Button */
+  .cta {
+    @apply inline-flex items-center px-4 py-2 bg-gov-crimson text-white rounded-md font-semibold shadow-sm hover:opacity-95;
+  }
+}
